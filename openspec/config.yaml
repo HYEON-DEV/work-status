@@ -1,0 +1,21 @@
+schema: spec-driven
+
+context: |
+  워크플로우: Agentic Coding Workflow — OpenSpec 명세 = 단일 진실 공급원(SSOT);
+  구현은 TDD(RED→GREEN→REFACTOR); 요구사항은 EARS 구문으로 작성;
+  실행 런타임: claude 또는 codex (양쪽 모두 같은 openspec/ 을 읽는다).
+  프로젝트 개요는 루트 project.md 참고.
+
+  도메인: 팀 업무현황. 팀원 각자의 work-status 플러그인(bf-common-atlas)이
+  AI 세션 기록으로 만든 "완료·진행 중·예정" 요약을 승인 후 보고하면,
+  이 서비스가 사람별·날짜별로 저장하고 현재 카드와 날짜 타임라인으로 보여 준다.
+  보고 본문은 이미 사람이 승인한 요약이며, 프롬프트 원문은 받지도 저장하지도 않는다.
+
+rules:
+  proposal:
+    - Non-goals 절을 반드시 둔다 (Jira 합성, Coolify 배포 등 다음 change 로 뺀 것을 명시)
+    - 500단어 이내
+  specs:
+    - 요구사항은 EARS 구문 (WHEN/IF … THEN 시스템은 …)
+  tasks:
+    - 한 줄 = 테스트 하나로 검증 가능한 단위
